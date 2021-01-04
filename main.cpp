@@ -1,33 +1,35 @@
 #include <iostream>
-#include <unordered_map>
 #include <string>
 using namespace std;
 
-void remove_con(char *s){
-    if(s[0] =='\0')return;
-    if(s[0]!=s[1])return remove_con(s+1);
-    else{
-        int i=1;
-        for(;s[i]!='\0';i++){
-            s[i-1]=s[i];
+
+void remove_starting(string & s){
+    s.erase(s.begin());
+}
+int get_more_count(string & s1,string & s2,int & count){
+    while(!s2.empty()){
+        if(s1==s2)return count;
+        else if(s1.size()>s2.size()){
+            remove_starting(s1);
+            count++;
         }
-        s[i-1]=s[i];
-        remove_con(s);
+        else{
+            remove_starting(s1);
+            remove_starting(s2);
+            count+=2;
+        }
     }
+    if(s2.empty())return count;
 }
-
-int length(const char s[]){
-    if(s[0]=='\0')return 0;
-    int s_length = length(s + 1);
-    return s_length + 1;
-}
-
-int main() {
-    char s[100];
-    cin>>s;
-    cout<<s<<endl;
-    cout<<length(s)<<endl;
-    remove_con(s);
-    cout<<s<<endl;
-    cout<<length(s)<<endl;
+int main(){
+    string s1,s2;
+    cin>>s1>>s2;
+    int count=0;
+    if(s1.size()<s2.size()){
+        string temp =s1;
+        s1 = s2;
+        s2 = temp;
+    }
+    if(s2.empty())cout<<s1.size()<<endl;
+    cout<< get_more_count(s1,s2,count)<<endl;
 }
