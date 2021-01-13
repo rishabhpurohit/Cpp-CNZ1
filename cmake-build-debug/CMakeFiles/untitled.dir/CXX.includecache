@@ -9,10 +9,10 @@
 C:/Users/Purohit/CLionProjects/untitled/main.cpp
 stdio.h
 -
+cmath
+-
 bits/stdc++.h
 -
 iostream
--
-math.h
 -
 

@@ -5,21 +5,26 @@
 
 using namespace std;
 
-void print_all_subsequences(string i, string o){
-    if(i.empty()){
-        cout << o <<endl;
-        return;
+int main(){
+    int t=0;
+    cin>>t;
+    while(t--){
+        int n=0;
+        cin>>n;
+        int a[n];
+        int count=0,i=0;
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        while(a[i]==1 && i<n-1) {
+            count++;
+            i++;
+        }
+        if(count%2==0)cout<<"First"<<endl;
+        else cout<<"Second"<<endl;
     }
-    print_all_subsequences(i.substr(1),o);
-    print_all_subsequences(i.substr(1),o+i[0]);
 }
 
-int main(){
-    int n =0;
-    //cin>>n;
-    string i;
-    cin>>i;
-    string o;
-    print_all_subsequences(i,o);
-    return 0;
-}
+
+
+
