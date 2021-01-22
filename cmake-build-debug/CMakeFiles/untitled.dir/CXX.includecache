@@ -7,12 +7,12 @@
 #IncludeRegexTransform: 
 
 C:/Users/Purohit/CLionProjects/untitled/main.cpp
-stdio.h
+iostream
 -
 cmath
 -
-bits/stdc++.h
--
-iostream
--
+node_class.cpp
+C:/Users/Purohit/CLionProjects/untitled/node_class.cpp
+
+C:/Users/Purohit/CLionProjects/untitled/node_class.cpp
 
