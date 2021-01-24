@@ -1,13 +1,17 @@
-#include <cmath>
-#include <bits/stdc++.h>
 #include <iostream>
-
+#include <cmath>
 #include "node_class.cpp"
 
 using namespace std;
 
 void print(node * head){
     node *temp = head;
+    while(temp!=NULL){
+        cout<<(*temp).data<<" "; //temp ->data
+        temp = (*temp).next; // temp -> next these also work ..........its the same
+    }
+    cout<<endl;
+    temp = head;
     while(temp!=NULL){
         cout<<(*temp).data<<" "; //temp ->data
         temp = (*temp).next; // temp -> next these also work ..........its the same
