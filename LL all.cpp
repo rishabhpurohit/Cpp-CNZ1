@@ -87,7 +87,7 @@ node* InsertElement(node * head, int i, int data){
     return head;
 }
 
-node* insert_recursively(node* head,int i,int data){
+void insert_recursively(node* head, int i, int data){
     if(head ==nullptr) return head;
     if(i==0){
         node* newNode = new node(data);

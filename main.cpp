@@ -1,12 +1,11 @@
 #include <iostream>
-#include <cmath>
 #include <sys/time.h>
 #include "node_class.cpp"
 
 using namespace std;
 
 long getTimeInMicroSeconds(){
-    struct timeval start;
+    struct timeval start{};
     gettimeofday(&start,nullptr);
     return start.tv_sec*1000000 + start.tv_usec;
 }
@@ -40,6 +39,7 @@ node* delete_recursively(node*head, int i){
         node*x = delete_recursively(head->next,i-1);
         head ->next = x;
     }
+    return nullptr;
 }
 node* delete_element(node*head , int x){
     if(x==0){
@@ -87,7 +87,7 @@ node* InsertElement(node * head, int i, int data){
     return head;
 }
 
-node* insert_recursively(node* head,int i,int data){
+node* insert_recursively(node* head, int i, int data){
     if(head ==nullptr) return head;
     if(i==0){
         node* newNode = new node(data);
@@ -121,7 +121,7 @@ node* take_Input(){
 
 void print(node * head){
     node *temp = head;
-    while(temp!=NULL){
+    while(temp!=nullptr){
         cout<<(*temp).data<<" "; //temp ->data
         temp = (*temp).next; // temp -> next these also work ..........its the same
     }
@@ -152,9 +152,9 @@ int main(){
     n4.next = &n5;
     n5.next = NULL;
     */
-    long starttime = getTimeInMicroSeconds();
+    long start_time = getTimeInMicroSeconds();
     node* head = take_Input();
-    long endtime = getTimeInMicroSeconds();
+    long end_time = getTimeInMicroSeconds();
     print(head);
     InsertElement(head,1,5000);
     print(head);
@@ -165,7 +165,8 @@ int main(){
     print(head);
     head = delete_recursively(head,5);
     print(head);
-    //cout<<"TIME = "<< endtime - starttime << endl; ------------ CIN =     1 2 3 4 5 6 7 -1
+    cout<<"TIME = "<< end_time - start_time << endl;
+    //------------ CIN =     1 2 3 4 5 6 7 -1
 }
 
 
