@@ -4,11 +4,23 @@
 
 using namespace std;
 
+
+
+// GET TIME IN ms
+
+
+
 long getTimeInMicroSeconds(){
     struct timeval start{};
     gettimeofday(&start,nullptr);
     return start.tv_sec*1000000 + start.tv_usec;
 }
+
+
+
+//GET SIZE OF LL RECURSIVELY + ITERATIVELY
+
+
 
 int size_LL(struct node* head){
     if(head==nullptr)return 0;
@@ -26,6 +38,13 @@ int size_LL(struct node* head){
     return count+1;
      */
 }
+
+
+
+//DELETE FROM A LL RECURSIVELY
+
+
+
 node* delete_recursively(node*head, int i){
     if(head==nullptr)return head;
     if(i==1){
@@ -62,6 +81,13 @@ node* delete_element(node*head , int x){
         return head;
     }
 }
+
+
+
+//INSERT INTO A LL
+
+
+
 node* InsertElement(node * head, int i, int data){
 
     if(head == nullptr && i==0) {
@@ -87,6 +113,12 @@ node* InsertElement(node * head, int i, int data){
     return head;
 }
 
+
+
+//INSERT INTO A LL RECURSIVELY
+
+
+
 node* insert_recursively(node* head, int i, int data){
     if(head ==nullptr) return head;
     if(i==0){
@@ -98,6 +130,12 @@ node* insert_recursively(node* head, int i, int data){
     node* x = insert_recursively(head -> next,i-1,data);
     head -> next = x;
 }
+
+
+
+// TAKING INPUT IN A LL
+
+
 
 node* take_Input(){
     int data =0;
@@ -119,6 +157,13 @@ node* take_Input(){
     return head;
 }
 
+
+
+//PRINT A LL
+
+
+
+
 void print(node * head){
     node *temp = head;
     while(temp!=nullptr){
@@ -137,8 +182,10 @@ void print(node * head){
      */
 }
 
+
+
 int main(){
-    /*
+    /* TO MANUALLY ADD NODES TO LL
     node n1(1);
     node n2(2);
     node n3(3);
@@ -152,20 +199,34 @@ int main(){
     n4.next = &n5;
     n5.next = NULL;
     */
+
+
     long start_time = getTimeInMicroSeconds();
     node* head = take_Input();
     long end_time = getTimeInMicroSeconds();
     print(head);
+    cout<<"TIME = "<< end_time - start_time << endl;
+
+
     InsertElement(head,1,5000);
     print(head);
+
+
     delete_element(head,1);
     print(head);
+
+
     cout<<size_LL(head)<<endl;
+
+
     head = insert_recursively(head,5,7000);
     print(head);
+
+
     head = delete_recursively(head,5);
     print(head);
-    cout<<"TIME = "<< end_time - start_time << endl;
+
+
     //------------ CIN =     1 2 3 4 5 6 7 -1
 }
 
