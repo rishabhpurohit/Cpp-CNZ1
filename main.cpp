@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sys/time.h>
 #include "node_class.cpp"
+#include <cmath>
 
 using namespace std;
 
@@ -60,6 +61,13 @@ node* delete_recursively(node*head, int i){
     }
     return nullptr;
 }
+
+
+
+//DELETE FROM LL ITERATIVELY
+
+
+
 node* delete_element(node*head , int x){
     if(x==0){
         node*temp1 =head;
@@ -159,8 +167,42 @@ node* take_Input(){
 
 
 
-//PRINT A LL
+//GET MID WITHOUT SIZE
 
+
+
+int get_mid_without_size(node*head){
+    if(head ==nullptr)return -1;
+    node*slow = head;
+    node*fast = slow->next;
+    while (fast!=nullptr){
+        if(fast->next == nullptr) break;
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow->data;
+}
+
+
+
+//GET MID WITH SIZE
+
+
+
+int get_mid(node*head,int size){
+    int count=0;
+    int mid = floor((size-1)/2);
+    node*temp = head;
+    while(count!=mid){
+        temp = temp->next;
+        count++;
+    }
+    return temp->data;
+}
+
+
+
+//PRINT A LL
 
 
 
@@ -216,14 +258,24 @@ int main(){
     print(head);
 
 
-    cout<<size_LL(head)<<endl;
+    int size = size_LL(head);
+    cout<<"SIZE of LinkedList = "<<size<<endl;
 
 
-    head = insert_recursively(head,5,7000);
+    int mid = get_mid(head,size);
+    cout<<"MID WITH HEAD = "<<mid<<endl;
     print(head);
 
 
-    head = delete_recursively(head,5);
+    int mid2 = get_mid_without_size(head);
+    cout<<"MID WITHOUT HEAD = "<<mid2<<endl;
+
+
+    head = insert_recursively(head,2,7000);
+    print(head);
+
+
+    head = delete_recursively(head,2);
     print(head);
 
 
