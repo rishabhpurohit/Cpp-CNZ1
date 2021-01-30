@@ -9,8 +9,12 @@
 C:/Users/Purohit/CLionProjects/untitled/main.cpp
 iostream
 -
-stdio.h
+sys/time.h
 -
-stdlib.h
+node_class.cpp
+C:/Users/Purohit/CLionProjects/untitled/node_class.cpp
+cmath
 -
+
+C:/Users/Purohit/CLionProjects/untitled/node_class.cpp
 
