@@ -9,25 +9,9 @@ public:
     node*tail;
 };
 
-node* take_Input(){
-    int data =0;
-    cin>>data;
-    node* head = nullptr;
-    node* tail = nullptr;
-    while (data != -1){
-        node *newNode = new node(data);
-        if(head ==nullptr){
-            head = newNode;
-            tail = newNode;
-        }
-        else{
-            tail -> next = newNode;
-            tail = newNode;
-        }
-        cin>>data;
-    }
-    return head;
-}
+
+
+
 
 Pair reverse_a_ll2(node *head) {
     if(head==nullptr || head->next ==nullptr){
@@ -51,6 +35,32 @@ Pair reverse_a_ll2(node *head) {
 node* reverse_better(node*head){
     return (reverse_a_ll2(head).head);
 }
+
+
+
+
+
+node* take_Input(){
+    int data =0;
+    cin>>data;
+    node* head = nullptr;
+    node* tail = nullptr;
+    while (data != -1){
+        node *newNode = new node(data);
+        if(head ==nullptr){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            tail -> next = newNode;
+            tail = newNode;
+        }
+        cin>>data;
+    }
+    return head;
+}
+
+
 
 void print(node * head){
     node *temp = head;
