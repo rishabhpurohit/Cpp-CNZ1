@@ -3,39 +3,20 @@
 
 using namespace std;
 
-class Pair{
-public:
-    node* head;
-    node*tail;
-};
 
-
-Pair reverse_a_ll2(node *head) {
+node* reverseLL_withoutPair(node *head) {
     if(head==nullptr || head->next ==nullptr){
-        Pair ans;
-        ans.head = head;
-        ans.tail = head;
-        return ans;
+        return head;
     }
+    node* ss = reverseLL_withoutPair(head->next);
+    node* tail = head->next;
 
-    Pair ss = reverse_a_ll2(head->next);
-
-    ss.tail->next = head;
+    tail->next = head;
     head->next = nullptr;
 
-    Pair ans;
-    ans.head = ss.head;
-    ans.tail = head;
-    return ans;
+    return ss;
+
 }
-
-node* reverse_better(node*head){
-    return (reverse_a_ll2(head).head);
-}
-
-
-
-
 
 node* take_Input(){
     int data =0;
@@ -65,7 +46,7 @@ void print(node * head){
         cout<<(*temp).data<<" "; //temp ->data
         temp = (*temp).next; // temp -> next these also work ..........its the same
     }
-    cout<<endl;
+    cout<<"HO HO HO! LIST PRINTED! "<<endl;
 }
 
 
@@ -74,7 +55,7 @@ int main(){
     node* head = take_Input();
     print(head);
 
-    node* head_rev = reverse_better(head);
+    node* head_rev = reverseLL_withoutPair(head);
     print(head_rev);
     cout<<endl;
 
