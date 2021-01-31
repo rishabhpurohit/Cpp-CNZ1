@@ -5,6 +5,11 @@
 
 using namespace std;
 
+class Pair{
+public:
+    node* head;
+    node*tail;
+};
 
 
 // GET TIME IN ms
@@ -143,10 +148,29 @@ node* insert_recursively(node* head, int i, int data){
 
 //REVERSE A LL
 
-node* insert_last(node* temp, node* head){
 
 
-    return temp;
+Pair reverse_a_ll2(node *head) {
+    if(head==nullptr || head->next ==nullptr){
+        Pair ans;
+        ans.head = head;
+        ans.tail = head;
+        return ans;
+    }
+
+    Pair ss = reverse_a_ll2(head->next);
+
+    ss.tail->next = head;
+    head->next = nullptr;
+
+    Pair result;
+    result.head = ss.head;
+    result.tail = head;
+    return result;
+}
+
+node* reverse_better(node*head){
+    return (reverse_a_ll2(head).head);
 }
 
 node* reverse_a_ll(node* head){
@@ -301,7 +325,7 @@ int main(){
     print(head);
 
 
-    node* head_rev = reverse_a_ll(head);
+    node* head_rev = reverse_better(head);
     cout<<"REVERSED LL -> ";
     print(head_rev);
     cout<<endl;

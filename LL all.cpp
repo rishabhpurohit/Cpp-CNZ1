@@ -5,6 +5,11 @@
 
 using namespace std;
 
+class Pair{
+public:
+    node* head;
+    node*tail;
+};
 
 
 // GET TIME IN ms
@@ -141,6 +146,48 @@ node* insert_recursively(node* head, int i, int data){
 
 
 
+//REVERSE A LL
+
+
+
+Pair reverse_a_ll2(node *head) {
+    if(head==nullptr || head->next ==nullptr){
+        Pair ans;
+        ans.head = head;
+        ans.tail = head;
+        return ans;
+    }
+
+    Pair ss = reverse_a_ll2(head->next);
+
+    ss.tail->next = ss.head;
+    ss.head->next = nullptr;
+
+    Pair result;
+    result.head = ss.head;
+    result.tail = head;
+    return result;
+}
+
+node* reverse_better(node*head){
+    return (reverse_a_ll2(head).head);
+}
+
+node* reverse_a_ll(node* head){
+    if(head==nullptr || head->next ==nullptr) return head;
+
+    node* ss = reverse_a_ll(head->next);
+
+    node* t = head;
+    while(t->next!=nullptr)
+        t=t->next;
+    t->next = head;
+    head->next = nullptr;
+    return ss;
+}
+
+
+
 // TAKING INPUT IN A LL
 
 
@@ -247,23 +294,22 @@ int main(){
     node* head = take_Input();
     long end_time = getTimeInMicroSeconds();
     print(head);
-    cout<<"TIME = "<< end_time - start_time << endl;
+    //cout<<"TIME = "<< end_time - start_time << endl;
 
 
-    InsertElement(head,1,5000);
-    print(head);
+    //InsertElement(head,1,5000);
+    //print(head);
 
 
-    delete_element(head,1);
-    print(head);
+    //delete_element(head,1);
+    //print(head);
 
 
     int size = size_LL(head);
     cout<<"SIZE of LinkedList = "<<size<<endl;
 
 
-    int mid = get_mid(head,size);
-    cout<<"MID WITH HEAD = "<<mid<<endl;
+    cout<<"MID WITH HEAD = "<<get_mid(head,size)<<endl;
     print(head);
 
 
@@ -271,12 +317,19 @@ int main(){
     cout<<"MID WITHOUT HEAD = "<<mid2<<endl;
 
 
-    head = insert_recursively(head,2,7000);
+    //head = insert_recursively(head,2,7000);
     print(head);
 
 
-    head = delete_recursively(head,2);
+    //head = delete_recursively(head,2);
     print(head);
+
+
+    node* head_rev = reverse_better(head);
+    cout<<"REVERSED LL -> ";
+    print(head_rev);
+    cout<<endl;
+
 
 
     //------------ CIN =     1 2 3 4 5 6 7 -1
