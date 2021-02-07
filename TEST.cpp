@@ -1,10 +1,10 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
 
 using namespace std;
 
 
-int MIN_SUM(int n, vector<pair<int,int>> vp){
+int MIN_SUM(int n, vector<int> x, vector<int> v){
 
 }
 int main(){
@@ -22,11 +22,7 @@ int main(){
         cin>>a;
         v.push_back(a);
     }
-    vector< pair<int,int> > vp;
-    for(int i=0;i<n;i++){
-        vp.push_back( {x[i],v[i]} );
-    }
-    cout<< MIN_SUM(n,vp)<<endl;
+    cout<< MIN_SUM(n,x,v)<<endl;
 
     return 0;
 }

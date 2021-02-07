@@ -160,8 +160,8 @@ Pair reverse_a_ll2(node *head) {
 
     Pair ss = reverse_a_ll2(head->next);
 
-    ss.tail->next = ss.head;
-    ss.head->next = nullptr;
+    ss.tail->next = head;
+    head->next = nullptr;
 
     Pair result;
     result.head = ss.head;
