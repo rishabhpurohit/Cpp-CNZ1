@@ -85,6 +85,12 @@
 		<Unit filename="C:/Users/Purohit/CLionProjects/untitled/main.cpp">
 			<Option target="untitled"/>
 		</Unit>
+		<Unit filename="C:/Users/Purohit/CLionProjects/untitled/pair_template.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="C:/Users/Purohit/CLionProjects/untitled/pair_template.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="C:/Users/Purohit/CLionProjects/untitled/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

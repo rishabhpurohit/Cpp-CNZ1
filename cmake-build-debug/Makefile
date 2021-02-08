@@ -169,6 +169,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+pair_template.obj: pair_template.cpp.obj
+
+.PHONY : pair_template.obj
+
+# target to build an object file
+pair_template.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/pair_template.cpp.obj
+.PHONY : pair_template.cpp.obj
+
+pair_template.i: pair_template.cpp.i
+
+.PHONY : pair_template.i
+
+# target to preprocess a source file
+pair_template.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/pair_template.cpp.i
+.PHONY : pair_template.cpp.i
+
+pair_template.s: pair_template.cpp.s
+
+.PHONY : pair_template.s
+
+# target to generate assembly for a file
+pair_template.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/pair_template.cpp.s
+.PHONY : pair_template.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -181,6 +208,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... pair_template.obj
+	@echo ... pair_template.i
+	@echo ... pair_template.s
 .PHONY : help
 
 
