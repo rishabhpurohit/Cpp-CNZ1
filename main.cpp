@@ -1,32 +1,32 @@
 #include <iostream>
-#include <bits/stdc++.h>
-
+#include <vector>
+#include "stack.cpp"
 using namespace std;
 
 
-int MIN_SUM(int n, vector<pair<int,int>> vp){
-
-}
 int main(){
-    int n=0;
-    cin>>n;
-    vector<int> x;
-    vector<int> v;
-    while(n--){
-        int a=0;
-        cin>>a;
-        x.push_back(a);
-    }
-    while(n--){
-        int a=0;
-        cin>>a;
-        v.push_back(a);
-    }
-    vector< pair<int,int> > vp;
-    for(int i=0;i<n;i++){
-        vp.push_back( {x[i],v[i]} );
-    }
-    cout<< MIN_SUM(n,vp)<<endl;
+    StackUsingArray s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+    s.push(50);
 
+    cout<<s.size()<<endl;
+    cout<<s.top()<<endl;
+
+
+    cout<<s.pop()<<endl;
+    cout<<s.top()<<endl;
+    cout<<s.pop()<<endl;
+    cout<<s.top()<<endl;
+    cout<<s.pop()<<endl;
+    cout<<s.top()<<endl;
+    cout<<s.pop()<<endl;
+    cout<<s.top()<<endl;
+    cout<<s.pop()<<endl;
+    cout<<s.top()<<endl;
+
+    cout<<s.isEmpty()<<endl;
     return 0;
 }
