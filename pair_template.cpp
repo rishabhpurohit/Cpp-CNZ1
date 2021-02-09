@@ -1,11 +1,10 @@
 //
 // Created by Purohit on 08-02-2021.
 //
-#include "pair_template.h"
 
 template <typename T>
 
-class Pair_T{
+class Pair{
     T x;
     T y;
 public:
