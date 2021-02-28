@@ -7,10 +7,8 @@
 #IncludeRegexTransform: 
 
 C:/Users/Purohit/CLionProjects/untitled/main.cpp
+bits/stdc++.h
+-
 iostream
--
-vector
--
-stack
 -
 
