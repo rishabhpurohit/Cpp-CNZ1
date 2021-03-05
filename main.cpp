@@ -1,21 +1,28 @@
 #include <bits/stdc++.h>
 #include <iostream>
-
+#include "QueueUsingArray.h"
 using namespace std;
 
 int main(){
-    string str;
-    cin>>str;
+    QueueUsingArray<int> q(5);
+    //q.enqueue(0);
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
 
-    stack<int> s;
-    for(char i:str){
-        if(i == '{') s.push('}');
-        else if(i == '[') s.push(']');
-        else if(i == '(') s.push(')');
-        else if(s.top()!=i && !s.empty()) break;
-        else s.pop();
-    }
-
-    cout<< s.empty()<<endl;
+    cout<<q.front()<<endl;
+    cout<<"removed - "<<q.dequeue()<<endl;
+    cout<<q.front()<<endl;
+    cout<<"removed - "<<q.dequeue()<<endl;
+    cout<<q.front()<<endl;
+    cout<<"removed - "<<q.dequeue()<<endl;
+    cout<<q.front()<<endl;
+    cout<<"removed - "<<q.dequeue()<<endl;
+    cout<<q.front()<<endl;
+    cout<<"removed - "<<q.dequeue()<<endl;
+    cout<<q.front()<<endl;
+    cout<< q.isEmpty()<<endl;
     return 0;
 }

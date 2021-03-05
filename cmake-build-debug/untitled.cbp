@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Purohit/CLionProjects/untitled/QueueUsingArray.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="C:/Users/Purohit/CLionProjects/untitled/main.cpp">
 			<Option target="untitled"/>
 		</Unit>
