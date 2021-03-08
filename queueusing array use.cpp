@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    QueueUsingArray<int> q(1);
+    QueueUsingArray<int> q(5);
     //q.enqueue(0);
     q.enqueue(1);
     q.enqueue(2);
@@ -12,7 +12,6 @@ int main(){
     q.enqueue(4);
     q.enqueue(5);
 
-
     cout<<q.front()<<endl;
     cout<<"removed - "<<q.dequeue()<<endl;
     cout<<q.front()<<endl;
@@ -24,8 +23,6 @@ int main(){
     cout<<q.front()<<endl;
     cout<<"removed - "<<q.dequeue()<<endl;
     cout<<q.front()<<endl;
-    cout<< (!q.isEmpty() ? "Not_EMPTY":"EMPTY") <<endl;
-    cout<<q.getSize()<<endl;
-
+    cout<< q.isEmpty()<<endl;
     return 0;
 }

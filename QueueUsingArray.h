@@ -31,8 +31,24 @@ public:
     //inserting element
     void enqueue(T ele) {
         if (size == capacity) {
-            cout << "Queue is Full" << endl;
-            return;
+            T* newData = new T[2*capacity];
+            int j=0;
+            for(int i=firstIndex;i<capacity;i++){
+                newData[j]=data[i];
+                j++;
+            }
+            for(int i=0;i<firstIndex;i++){
+                newData[j]=data[i];
+                j++;
+            }
+            /*cout << "Queue is Full" << endl;
+            return;*/
+            delete [] data;
+            data = newData;
+            firstIndex=0;
+            nextIndex=capacity;
+            capacity*=2;
+
         }
         data[nextIndex] = ele;
         nextIndex = (nextIndex + 1) % capacity;

@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Purohit/CLionProjects/untitled/QueueUsingArray.h
+iostream
+-
+
 C:/Users/Purohit/CLionProjects/untitled/main.cpp
 bits/stdc++.h
 -
 iostream
 -
+QueueUsingArray.h
+C:/Users/Purohit/CLionProjects/untitled/QueueUsingArray.h
 
