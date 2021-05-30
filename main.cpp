@@ -4,6 +4,15 @@
 
 using namespace std;
 
+TreeNode<int>* takeInputLevelWise(){
+    int rootData;
+    cout<<"Enter root data: "<<endl;
+    cin>>rootData;
+    TreeNode<int>* root = new TreeNode<int>(rootData);
+
+    queue<TreeNode<int>*>
+}
+
 TreeNode<int>* takeInput(){
     int rootData = 0;
     cout<<"enterData"<<endl;
@@ -20,7 +29,8 @@ TreeNode<int>* takeInput(){
 }
 
 void printTree(TreeNode<int>* root){
-    if(root==nullptr) return;//edge case
+    if(root==nullptr) return;
+    //edge case
     cout << root->data << ":";
     for(int i=0;i<root->children.size();i++)
         cout<<root->children[i]->data<<",";
@@ -30,6 +40,7 @@ void printTree(TreeNode<int>* root){
     }
 }
 int main(){
+    // to make tree without using function..
 //    TreeNode<int>* root = new TreeNode<int>(1);
 //    TreeNode<int>* node1 = new TreeNode<int>(2);
 //    TreeNode<int>* node2 = new TreeNode<int>(3);
